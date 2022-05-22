@@ -415,6 +415,10 @@ class OrgChart{
                 {
                     throw invalid_argument{"No root in the graph!"};
                 }
+                if(son=="" ||father=="" )
+                {
+                    throw invalid_argument{"No root in the graph!"};
+                }
                 Node* n= findNode(root,father);
                 
                 if(n==nullptr){
@@ -433,13 +437,17 @@ class OrgChart{
              */
             OrgChart& add_root( T val)
             {
-                if(root==nullptr)
+                if (val=="")
+                {
+                     throw invalid_argument{"can't find node."};
+                    
+                }
+                else if(root==nullptr)
                 {
                     root=new Node(val);
                 }else{
-                    root->val=val;
+                root->val=val;
                 }
-                
                 return *this;
             }
             ~OrgChart()
