@@ -442,7 +442,7 @@ class OrgChart{
                      throw invalid_argument{"can't find node."};
                     
                 }
-                else if(root==nullptr)
+                if(root==nullptr)
                 {
                     root=new Node(val);
                 }else{
